@@ -1,10 +1,13 @@
 # import os
 # import tempfile
+import numpy as np
 from typing import List, Tuple
 from llama_index.core import Document
 from pdf2image import convert_from_bytes
-import pytesseract
+import easyocr
 from PyPDF2 import PdfReader
+
+reader = easyocr.Reader(['en', 'id'], verbose=False)
 
 def extract_text_from_pdf(file_bytes: bytes) -> str:
     try:
@@ -14,10 +17,17 @@ def extract_text_from_pdf(file_bytes: bytes) -> str:
     except:
         return ""
     
-def extract_text_with_ocr(file_bytes:bytes) -> str:
-    images = convert_from_bytes(file_bytes)
-    text = "\n".join([pytesseract.image_to_string(image) for image in images])
-    return text.strip()
+def extract_text_with_ocr(file_bytes: bytes) -> str:
+    """Convert PDF pages to images and extract text using EasyOCR."""
+    try:
+        images = convert_from_bytes(file_bytes)
+        text = ""
+        for img in images:
+            result = reader.readtext(np.array(img), detail=0, paragraph=True)
+            text += "\n".join(result) + "\n"
+        return text.strip()
+    except Exception:
+        return ""
 
 def load_documents(files, session_id) -> Tuple[List[Document], str]:
     documents = []
