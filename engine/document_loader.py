@@ -19,7 +19,7 @@ def extract_text_with_ocr(file_bytes:bytes) -> str:
     text = "\n".join([pytesseract.image_to_string(image) for image in images])
     return text.strip()
 
-def load_document(files, session_id) -> Tuple[List[Document], str]:
+def load_documents(files, session_id) -> Tuple[List[Document], str]:
     documents = []
     previews = []
 
