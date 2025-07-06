@@ -1,0 +1,9 @@
+llama-index
+llama-index-llms-gemini
+llama-index-embeddings-huggingface
+google-generativeai
+PyPDF2
+pytesseract
+pdf2image
+streamlit
+python-dotenv
