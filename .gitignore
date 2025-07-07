@@ -1,0 +1,22 @@
+# Environment variables
+.env
+
+# Caches
+/hf_cache
+__pycache__/
+.pytest_cache/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Temporary data/uploads from app
+/data/
+
+# IDE specific
+.vscode/
+
+# OS specific
+.DS_Store
+Thumbs.db
