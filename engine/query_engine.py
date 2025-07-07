@@ -33,7 +33,7 @@ def build_query_engine(docs):
 
     reranker = SentenceTransformerRerank(
         model="cross-encoder/ms-marco-MiniLM-L-6-v2",
-        top_k=4,
+        top_n=4,
         )
     
     query_engine = RetrieverQueryEngine.from_args(
