@@ -1,5 +1,6 @@
 from llama_index.core import Settings, VectorStoreIndex
-from .llm_gemini import load_llm
+# from .llm_gemini import load_llm
+from .llm_openai import load_llm
 from .embedder import load_embedder
 from llama_index.core.prompts import PromptTemplate
 from llama_index.core.query_engine import RetrieverQueryEngine
