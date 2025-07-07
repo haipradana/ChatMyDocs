@@ -63,7 +63,7 @@ if prompt := st.chat_input("Ask me anything about the documents"):
         message_placeholder.markdown(full_response)
 
         if response.source_nodes:
-            source = set(node.node.extra_info.get("source", "") for node in response.source_nodes)
+            source = set(node.node.metadata.get("source", "") for node in response.source_nodes)
             st.markdown("**Sources:** " + ", ".join(sorted(source)))
 
     st.session_state.messages.append({"role":"assistant", "content":full_response})
