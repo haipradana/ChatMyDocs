@@ -1,6 +1,7 @@
 # import os
 # import tempfile
 import numpy as np
+import io
 from typing import List, Tuple
 from llama_index.core import Document
 from pdf2image import convert_from_bytes
@@ -11,10 +12,11 @@ reader = easyocr.Reader(['en', 'id'], verbose=False)
 
 def extract_text_from_pdf(file_bytes: bytes) -> str:
     try:
-        reader = PdfReader(file_bytes)
+        pdf_file = io.BytesIO(file_bytes)
+        reader = PdfReader(pdf_file)
         text = "\n".join([page.extract_text() for page in reader.pages])
         return text.strip()
-    except:
+    except Exception:
         return ""
     
 def extract_text_with_ocr(file_bytes: bytes) -> str:

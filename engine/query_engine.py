@@ -17,9 +17,15 @@ def build_query_engine(docs):
 
     qa_prompt = PromptTemplate(
         """
-        Context information is below.\n----------------------\n{context}\n----------------------\n
-        Using the context above, answer the question below. \nIf you don't know the answer, just say that you don't know. DO NOT try to make up an answer.
-        Question: {query_str}\nAnswer:
+        Context information is below.
+        ----------------------
+        {context_str}
+        ----------------------
+
+        Using the context above, answer the question below. Be helpful and concise.
+        If you don't know the answer, just say that you don't have the information. DO NOT try to make up an answer.
+        Question: {query_str}
+        Answer:
         """
     )
 
