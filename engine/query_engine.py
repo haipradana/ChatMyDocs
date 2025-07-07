@@ -32,7 +32,7 @@ def build_query_engine(docs):
     retriever = VectorIndexRetriever(index=index, similarity_top_k=8)
 
     reranker = SentenceTransformerRerank(
-        model_name="cross-encoder/ms-marco-MiniLM-L-6-v2",
+        model="cross-encoder/ms-marco-MiniLM-L-6-v2",
         top_k=4,
         )
     
