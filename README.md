@@ -40,8 +40,13 @@ RAG-based PDF chat assistant with advanced retrieval and reranking capabilities.
 ## Stack
 
 • **Frontend**: Streamlit
+
 • **Embeddings**: ModernBERT (`nomic-ai/modernbert-embed-base`)
+
 • **Reranking**: Cross-encoder (`cross-encoder/ms-marco-MiniLM-L-6-v2`)
+
 • **LLM**: Google Gemini 2.5-flash
+
 • **PDF Processing**: PyPDF2 + EasyOCR (for pdf with image, not scanned)
+
 • **Vector Store**: LlamaIndex VectorStoreIndex
