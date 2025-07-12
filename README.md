@@ -5,6 +5,7 @@ RAG-based PDF chat assistant with advanced retrieval and reranking capabilities.
 ## ✨ Key Features
 
 • **ModernBERT Embeddings**: Uses `nomic-ai/modernbert-embed-base` for semantic search
+
 • **Smart Reranking**: Cross-encoder reranking with `cross-encoder/ms-marco-MiniLM-L-6-v2`
 • **OCR Support**: Automatic text extraction with EasyOCR fallback
 • **Streaming Responses**: Real-time chat with Gemini 2.5-flash
