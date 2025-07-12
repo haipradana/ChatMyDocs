@@ -1,6 +1,10 @@
-# ChatMyDocs
+# ChatMyDocs with ModernBERT
 
 RAG-based PDF chat assistant with advanced retrieval and reranking capabilities.
+
+## Demo
+
+[![ChatMyDocs Demo](screenshot.png)](https://youtu.be/lETbVuimVCg)
 
 ## Features
 
@@ -13,10 +17,6 @@ RAG-based PDF chat assistant with advanced retrieval and reranking capabilities.
 • **Streaming Responses**: Real-time chat with Gemini 2.5-flash
 
 • **Source Citations**: Shows document sources for each answer
-
-## Demo
-
-[![ChatMyDocs Demo](screenshot.png)](https://youtu.be/lETbVuimVCg)
 
 ## Quick Setup
 
